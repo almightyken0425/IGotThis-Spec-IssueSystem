@@ -52,6 +52,7 @@
 
 - **說明:**
   - 值型別的固定原語清單，使用者可組欄位配方、不可擴充原語
+  - 系統級清單，不植入各 Company 定義區
 - **檔案:**
   - `assets/definitions/ValueTypePrimitives.json`
 - **欄位:**
@@ -76,6 +77,7 @@
 
 - **說明:**
   - 內建欄位的標準定義，各 Company 定義區的初始內容
+  - Company 建立時植入該 Company 的欄位定義與欄位組定義
 - **檔案:**
   - `assets/definitions/StandardFieldCatalog.json`
 - **欄位:**

@@ -32,6 +32,7 @@
   - `companyId`: String, UUID/GUID - Foreign Key to Companies, Not Null, Index, 租戶鍵；流程定義收在 Company 定義區
   - `issueTypeId`: String, UUID/GUID - Foreign Key to IssueTypeDefinitions, Not Null, Index, 所屬工單型別；流程定義綁工單型別，一種型別一套
   - `name`: String - Not Null, 狀態名稱；與 `companyId`、`issueTypeId` 組成複合 Primary Key
+  - `sortOrder`: Number - Not Null, 狀態排列位置；狀態清單與看板欄序依此排序
   - `isInitial`: Boolean - Not Null, 起始狀態旗標；新工單落在起始狀態
   - `isTerminal`: Boolean - Not Null, 終止狀態旗標；為真代表流程終點
 
@@ -70,16 +71,17 @@
   - `assets/definitions/StandardWorkflowStates.json`
 - **欄位:**
   - `name`: `String` - 狀態名稱，值為待處理、處理中、已關閉之一
+  - `sortOrder`: `Number` - 狀態排列位置
   - `isInitial`: `Boolean` - 起始狀態旗標
   - `isTerminal`: `Boolean` - 終止狀態旗標
 - 空白流程會卡死第一次使用 → 建立工單型別即帶入種子
 - 三個狀態幾乎所有工作皆適用，需細分再自行追加
 
-| name | isInitial | isTerminal |
-|---|---|---|
-| 待處理 | 是 | 否 |
-| 處理中 | 否 | 否 |
-| 已關閉 | 否 | 是 |
+| name | sortOrder | isInitial | isTerminal |
+|---|---|---|---|
+| 待處理 | 1 | 是 | 否 |
+| 處理中 | 2 | 否 | 否 |
+| 已關閉 | 3 | 否 | 是 |
 
 ### 標準流程轉換 StandardWorkflowTransitions
 
