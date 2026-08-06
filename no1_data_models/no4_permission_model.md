@@ -118,6 +118,7 @@
 
 - **說明:**
   - 內建四等級的八開關真值表，各 `Company` 等級定義表的初始內容；內建列標系統欄，不可刪除
+  - Company 建立時植入該 Company 的等級定義表
 - **檔案:**
   - `assets/definitions/StandardLevels.json`
 - **欄位:**
